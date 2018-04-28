@@ -2,8 +2,93 @@
 <html>
     <head>
         <title>蓝色古龙与皈依的婚礼</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+        <style>
+           *{
+                font-family: 微软雅黑;
+            }
+            HTML {margin:0;padding:0;height:100%;overflow:auto;scrollbar-3dlight-color:#718da6;scrollbar-arrow-color:#000;scrollbar-base-color:#718da6;scrollbar-darkshadow-color:#fff;scrollbar-face-color:#f2f7fc;scrollbar-highlight-color:#fbfdfc;scrollbar-shadow-color:#718da6;}
+            BODY {margin:0;padding:0;margin:auto;overflow:auto;font-size:12px;color:#000;background:#fff;font-family:Verdana, Arial;font-size:11px;text-align: center;}
+            SELECT {font-family:微软雅黑;font-size:15px;}
+            IMG { border:none; }
+            ul{
+                list-style: none;
+	            text-decoration: none;
+            }
+            li {
+                position: absolute;
+                display: none;
+            }
+            .page{
+                width: 600px;
+                height: 849px;
+                position: relative;
+                margin:auto;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        <div> </div>
+        <div id="d1" class="page"> 
+            <ul>
+                <li id="d1-l1" style="display: block">
+                    <img src="images/bgbg.jpg">
+                </li>
+                <li id="d1-l2" style="top:50%;left:50%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/bg.jpg">
+                </li>
+                <li id="d1-l3">
+                    <img src="images/kuang2.jpg">
+                </li>
+                <li id="d1-l4">
+                    <img src="images/kuangTop.jpg">
+                </li>
+                <li id="d1-l5">
+                    <img src="images/kuangBot.jpg">
+                </li>
+                <li id="d1-l6">
+                    <img src="images/san.jpg">
+                </li>
+                <li id="d1-l7">
+                    <img src="images/kuang.jpg">
+                </li>
+                <li id="d1-l8">
+                    <img src="images/boy.jpg">
+                </li>
+                <li id="d1-l9">
+                    <img src="images/xi.jpg">
+                </li>
+                <li id="d1-l10">
+                    <img src="images/bigGirl.jpg">
+                </li>
+                <li id="d1-l11">
+                    <img src="images/bigXi.jpg">
+                </li>
+                <li id="d1-l12">
+                    <img src="images/cloud.jpg">
+                </li>
+                <li id="d1-l13">
+                    <img src="images/cloud4.jpg">
+                </li> 
+                <li id="d1-l14">
+                    <div>杨一中 张鹤</div>
+                    <div>2018.05.26</div>
+                </li>                
+            </ul>
+        </div>
     </body>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+        function anim(el, x) {
+            el.removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass();
+            });
+        };
+        $(document).ready(function(){
+            $('#d1-l2').show();
+            anim($('#d1-l2'), 'zoomIn');    
+        });
+        
+    </script>
 </html>
