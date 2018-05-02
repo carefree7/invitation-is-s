@@ -38,41 +38,42 @@
                 <li id="d1-l2" style="top:50%;left:50%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
                     <img src="images/bg.jpg">
                 </li>
-                <li id="d1-l3">
+                <li id="d1-l3" style="top:85px;left:50%;margin-left:-238px;width:556px;height:800px;position:absolute;">
                     <img src="images/kuang2.jpg">
                 </li>
-                <li id="d1-l4">
+                <li id="d1-l4" style="top:50%;left:50%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
                     <img src="images/kuangTop.jpg">
                 </li>
-                <li id="d1-l5">
+                <li id="d1-l5" style="top:740px;left:50%;margin-left:-238px;width:556px;height:800px;position:absolute;">
                     <img src="images/kuangBot.jpg">
                 </li>
-                <li id="d1-l6">
-                    <img src="images/san.jpg">
+                <li id="d1-l6" style="top:54%;left:19%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/san.jpg" style="width: 142px; height: 153px;">
                 </li>
-                <li id="d1-l7">
-                    <img src="images/kuang.jpg">
+                <li id="d1-l7" style="top:58%;left:50%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/kuang.jpg" style="width: 400px; height: 524px;">
                 </li>
-                <li id="d1-l8">
-                    <img src="images/boy.jpg">
+                <li id="d1-l8" style="top:95%;left:21%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/boy3.jpg" style="width: 168px; height: 404px;">
                 </li>
-                <li id="d1-l9">
-                    <img src="images/xi.jpg">
+                <li id="d1-l9" style="top:73%;left:50%;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/xi.jpg" >
                 </li>
-                <li id="d1-l10">
-                    <img src="images/bigGirl.jpg">
+                <li id="d1-l10" style="top:54%;left:74%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/bigGirl.jpg" style="width: 154px; height: 216px;">
                 </li>
-                <li id="d1-l11">
-                    <img src="images/bigXi.jpg">
+                <li id="d1-l11" style="top:62%;left:44%;margin-top:-400px;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/bigXi.jpg" style="width: 282px; height: 480px;">
                 </li>
-                <li id="d1-l12">
-                    <img src="images/cloud.jpg">
+                <li id="d1-l12" style="top:23%;left:21%;margin-left:-238px;width:556px;height:800px;position:absolute;">
+                    <img src="images/cloud.jpg" style="width: 119px; height: 37px;">
                 </li>
-                <li id="d1-l13">
-                    <img src="images/cloud4.jpg">
+                <li id="d1-l13" style="top:89%;left:42%;width:556px;height:800px;position:absolute;">
+                    <img src="images/cloud4.jpg" style="width: 114px; height: 38px;">
                 </li> 
-                <li id="d1-l14">
-                    <div>杨一中 张鹤</div>
+                <li id="d1-l14" style="top:78%;left:47%;margin-left:-238px;width:556px;height:800px;position:absolute;font-size: 24px;
+                 color: rgb(255, 255, 255);text-align:center;padding: 0.6em 15px;line-height:2;word-wrap: break-word;">
+                    <div>杨 一 中 & 张 鹤</div>
                     <div>2018.05.26</div>
                 </li>                
             </ul>
@@ -80,14 +81,68 @@
     </body>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script>
-        function anim(el, x) {
+        function anim(el, x, nextAction) {
             el.removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                 $(this).removeClass();
+                if (null != nextAction)
+                {
+                    nextAction();
+                }
             });
         };
-        $(document).ready(function(){
+        function show1(){
             $('#d1-l2').show();
-            anim($('#d1-l2'), 'zoomIn');    
+            anim($('#d1-l2'), 'zoomIn', show2);  
+        }
+        function show2(){
+            $('#d1-l3').show();
+            $('#d1-l4').show();
+            $('#d1-l5').show();
+            anim($('#d1-l3'), 'fadeInLeft'); 
+            anim($('#d1-l4'), 'fadeInLeft'); 
+            anim($('#d1-l5'), 'fadeInLeft', show3); 
+        }
+        function show3()
+        {
+            $('#d1-l7').show();
+            anim($('#d1-l7'), 'flipInY', show4); 
+        }
+        function show4()
+        {
+            $('#d1-l11').show();
+            anim($('#d1-l11'), 'flipInY', show5); 
+        }
+        function show5()
+        {
+            $('#d1-l12').show();
+            anim($('#d1-l12'), 'slideInLeft'); 
+            $('#d1-l13').show();
+            anim($('#d1-l13'), 'slideInLeft', show6); 
+        }
+        function show6()
+        {
+            $('#d1-l8').show();
+            anim($('#d1-l8'), 'slideInLeft'); 
+            $('#d1-l10').show();
+            anim($('#d1-l10'), 'slideInRight',show7); 
+        }
+        function show7()
+        {
+            $('#d1-l6').show();
+            anim($('#d1-l6'), 'slideInLeft', show8); 
+        }
+        function show8()
+        {
+            $('#d1-l9').show();
+            anim($('#d1-l9'), 'zoomIn', show9); 
+        }
+        function show9()
+        {
+            $('#d1-l14').show();
+            anim($('#d1-l14'), 'zoomIn'); 
+        }
+        $(document).ready(function(){
+            show1();            
         });
         
     </script>
