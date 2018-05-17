@@ -4,7 +4,7 @@
         <title>蓝色古龙与皈依的婚礼</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=600, maximum-scale=1.0, user-scalable=no"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
         <style>
            *{
                 font-family: 微软雅黑;
@@ -12,11 +12,87 @@
             HTML {margin:0;padding:0;height:100%;overflow:auto;scrollbar-3dlight-color:#718da6;scrollbar-arrow-color:#000;scrollbar-base-color:#718da6;scrollbar-darkshadow-color:#fff;scrollbar-face-color:#f2f7fc;scrollbar-highlight-color:#fbfdfc;scrollbar-shadow-color:#718da6;}
             BODY {
                 margin:0;padding:0;margin:auto;overflow:auto;font-size:12px;color:#000;
-                background:#fff;font-family:Verdana, Arial;font-size:11px;text-align: center;
+                background:#fff;font-family:Verdana, Arial;font-size:11px;
+                display:flex;/*Flex布局*/ display: -webkit-flex; /* Safari */ align-items:center;/* 垂直居中 */
+                /* 水平居中 子项需要设置 margin: auto*/
+                text-align: center;
                 width: 100%;height: 100%;
+                position: relative;
             }
             SELECT {font-family:微软雅黑;font-size:15px;}
             IMG { border:none; }
+            .rotate{
+                -webkit-transition-property: -webkit-transform;
+                -webkit-transition-duration: 1s;
+                -moz-transition-property: -moz-transform;
+                -moz-transition-duration: 1s;
+                -webkit-animation: rotate 3s linear infinite;
+                -moz-animation: rotate 3s linear infinite;
+                -o-animation: rotate 3s linear infinite;
+                animation: rotate 3s linear infinite;}
+            @-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+                to{-webkit-transform: rotate(360deg)}
+            }
+            @-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+                to{-moz-transform: rotate(359deg)}
+            }
+            @-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+                to{-o-transform: rotate(359deg)}
+            }
+            @keyframes rotate{from{transform: rotate(0deg)}
+                to{transform: rotate(359deg)}
+            }
+            #d0{
+                width: 100%;height: 100%;
+                position: absolute;
+                margin: auto;
+                padding: 0;
+                text-align: center;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover; 
+                background-image:url(images/bgbg.jpg);
+            }
+            #d0-1{
+                list-style: none;
+	            text-decoration: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                height:94%;
+                width:90%;
+                top: 3%;
+                left: 5%;
+                background-image:url(images/bg.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: none;
+            }
+            .page{
+                    width: 375px;
+                    height: 667px;
+                    position: relative;
+                    margin: auto;
+                    padding: 0;
+                    text-align: center;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover; 
+                    overflow:hidden;
+            }
+            @media screen and (max-width:375px) {
+                BODY{
+                    width: 375px;
+                }
+            }  
+            @media screen and (max-height:667px) {
+                BODY{
+                    height: 667px;
+                }
+            }                
             ul{
                 list-style: none;
 	            text-decoration: none;
@@ -33,76 +109,122 @@
                 display: none;
                 background-position: center center;
                 background-repeat: no-repeat;
-                background-attachment: fixed;
                 background-size: cover;
                 height:100%;
                 width:100%;
-            }
-            .page{
-                width: 100%;height: 100%;
-                position: relative;
-                margin: auto;
-                padding: 0;
-                text-align: center;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-                background-image:url(images/bgbg.jpg);
-            }
+            }            
         </style>
     </head>
-    <body>
-        <div id="d1" class="page"> 
+    <body class="body0">
+        <div id="music" style="position: fixed;z-index: 10;right: 1rem;top: 1rem;">
+            <img id="musicOn" src="images/onMusic.png" style="display: block;" class="rotate"/>
+            <img id="musicOff" src="images/offMusic.png" style="display: none;"/>
+            <audio id="myaudio" loop="loop" preload="auto" autoplay="autoplay">
+                <source src="music/最重要的决定.mp3" type="audio/ogg" />
+                <source src="music/最重要的决定.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+        <div id="d0">
+            <div id="d0-1"></div>
+        </div>
+        <div id="d1" class="page" style="display: none;"> 
             <ul>
-                <li id="d1-l2" style="display: block;background-image:url(images/bg.jpg);" />
-                <li id="d1-l3" style="display: block;left:50%;position:absolute;background-image:url(images/kuang2.jpg);background-size:contain;background-repeat: repeat;">
+                <li id="d1-l1" >
+                    <div style="width:1rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="width:1rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="height:1rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="height:1rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
                 </li>
-                <li id="d1-l4" style="left:50%;position:absolute;height:100%;background-image:url(images/kuangTop.jpg);background-size:contain;background-position:0 0;">
-                    <!-- <img src="images/kuangTop.jpg"> -->
+                <li id="d1-l2" style="background-size:16rem;background-image:url(images/kuang.jpg);">
                 </li>
-                <li id="d1-l5" style="left:50%;position:absolute;height:100%;background-image:url(images/kuangBot.jpg);background-size:contain;background-position:0 100%;">
-                    <!-- <img src="images/kuangBot.jpg"> -->
+                <li id="d1-l3" style="background-size:11rem;left:-1.2rem;background-image:url(images/bigXi.jpg);">
                 </li>
-                <li id="d1-l6" style="top:54%;left:19%;margin-top:-400px;height:800px;position:absolute;">
-                    <img src="images/san.jpg" style="width: 142px; height: 153px;">
+                <li id="d1-l4" style="background-size:4rem;bottom: -17rem;right: -6.4rem;background-image:url(images/cloud.jpg);">
                 </li>
-                <li id="d1-l7" style="left:50%;position:absolute;height:100%;background-image:url(images/kuang.jpg);background-size:contain;background-position:0 30%;">
-                    <!-- <img src="images/kuang.jpg" style="width: 400px; height: 524px;"> -->
-                </li>
-                <li id="d1-l8" style="top:95%;left:21%;margin-top:-400px;height:800px;position:absolute;">
-                    <img src="images/boy3.jpg" style="width: 168px; height: 404px;">
-                </li>
-                <li id="d1-l9" style="top:73%;left:50%;height:800px;position:absolute;">
-                    <img src="images/xi.jpg" >
-                </li>
-                <li id="d1-l10" style="top:54%;left:74%;margin-top:-400px;height:800px;position:absolute;">
-                    <img src="images/bigGirl.jpg" style="width: 154px; height: 216px;">
-                </li>
-                <li id="d1-l11" style="left:50%;position:absolute;height:100%;background-image:url(images/bigXi.jpg);background-size:70%;background-position:0 30%;">
-                    <!-- <img src="images/bigXi.jpg" style="width: 282px; height: 480px;"> -->
-                </li>
-                <li id="d1-l12" style="top:23%;left:21%;height:800px;position:absolute;">
-                    <img src="images/cloud.jpg" style="width: 119px; height: 37px;">
-                </li>
-                <li id="d1-l13" style="top:89%;left:42%;width:556px;height:800px;position:absolute;">
-                    <img src="images/cloud4.jpg" style="width: 114px; height: 38px;">
+                <li id="d1-l5" style="background-size:4rem;top: -5.8rem;left: -6.4rem;background-image:url(images/cloud.jpg);">
                 </li> 
-                <li id="d1-l14" style="top:78%;left:47%;height:800px;position:absolute;font-size: 24px;
-                 color: rgb(255, 255, 255);text-align:center;padding: 0.6em 15px;line-height:2;word-wrap: break-word;">
-                    <div>杨 一 中 & 张 鹤</div>
-                    <div>2018.05.26</div>
-                </li>                
+                <li id="d1-l6" style="background-size:7.2rem;bottom: -10rem;left: -6rem;background-image:url(images/boy3.jpg);">
+                </li>
+                <li id="d1-l7" style="background-size:7.2rem;top: -10rem;right: -6rem;background-image:url(images/bigGirl.jpg);">
+                </li>
+                <li id="d1-l8" style="background-size:7.2rem;top: -14.6rem;left: -6rem;background-image:url(images/san.jpg);">
+                </li>
+                <li id="d1-l9" style="background-size:7.2rem;bottom: -11rem;left: -0rem;background-image:url(images/xi.jpg);">
+                </li>
+                <li id="d1-l10" style="bottom: -14rem;left: -0rem;font-size: 14px;">
+                    <div style="width: 100%;height: 100%;
+                    display:flex;display: -webkit-flex;align-items:center;text-align: center;
+                    color: rgb(255, 255, 255);text-align:center;line-height:2;word-wrap: break-word;">
+                        <div style="margin: auto">杨 一 中 & 张 鹤</div>
+                    </div>
+                </li> 
+                <li id="d1-l11" style="bottom: -16.5rem;left: -0rem;">
+                    <div style="width: 100%;height: 100%;
+                    display:flex;display: -webkit-flex;align-items:center;text-align: center;
+                    color: rgb(255, 255, 255);text-align:center;line-height:2;word-wrap: break-word;">
+                        <div style="margin: auto">2018.05.26</div>
+                    </div>
+                </li>            
             </ul>
+            <arrow id="d1-arrow" style="position: absolute;z-index:10;left:11.2rem;bottom: 2rem;">
+                <img id="arrowOn" src="images/arrow.png" style="display: block;width:20px;height:17px;"/>
+            </arrow> 
+        </div>
+        <div id="d2" class="page" style="display: none;"> 
+            <ul>
+                <li id="d2-l1" >
+                    <div style="width:1rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="width:1rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="height:1rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="height:1rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                </li>
+            </ul>
+            <arrow id="d2-arrow" style="position: absolute;z-index:10;left:11.2rem;bottom: 2rem;">
+                <img id="arrowOn" src="images/arrow.png" style="display: block;width:20px;height:17px;"/>
+            </arrow> 
         </div>
     </body>
     <script src="js/jquery-1.10.2.min.js"></script>
     <script>
-        $(window).bind('resize load', function() {
-            $("body").css("zoom", $(window).width() / 600);
-            $("body").css("display", "block");
-            $("body").css("zoom", $(window).width() / 600);
+        // $(window).bind('resize load', function() {
+        //     $(".body0").css("zoom", $(window).width() / 600);
+        //     $(".body0").css("display", "block");
+        //     $(".body0").css("zoom", $(window).width() / 600);
+        // });
+        //控制背景音乐
+        var oAudio = document.getElementById('myaudio');
+        oAudio.volume = 0.1;
+        $("#music").bind('touchstart click', function() {
+            if ($("#musicOn").is(":hidden"))
+            {
+                $("#musicOn").show();
+                $("#musicOff").hide();
+                oAudio.play();
+            }
+            else
+            {
+                $("#musicOff").show();
+                $("#musicOn").hide();
+                oAudio.pause();
+            }
         });
+        //翻页
+        var pageIndex = 1;
+        $("arrow").bind('touchstart click', function() {
+            if (pageIndex == 2)
+            {
+                hide2();
+                show0_1(show1); 
+                pageIndex = 1;
+            }
+            else if (pageIndex == 1)
+            {
+                hide1();
+                show0_1(show2); 
+                pageIndex = 2;
+            }
+        });
+        //动画公共类
         function anim(el, x, nextAction) {
             el.removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                 $(this).removeClass();
@@ -112,60 +234,101 @@
                 }
             });
         };
+        function show0_1(nextShow){
+            $('#d0-1').show();
+            anim($('#d0-1'), 'zoomIn', nextShow);  
+        }
+        //第一页动画
+        function hide1(){
+            $('#d1').hide();
+            $('#d1-l1').hide();
+            $('#d1-l2').hide();
+            $('#d1-l3').hide();
+            $('#d1-l4').hide();
+            $('#d1-l5').hide();
+            $('#d1-l6').hide();
+            $('#d1-l7').hide();
+            $('#d1-l8').hide();
+            $('#d1-l9').hide();
+            $('#d1-l10').hide();
+            $('#d1-l11').hide();
+        }
+        function arrow1(){
+            if (pageIndex != 1)
+            {
+                return;
+            }
+            $('#d1-arrow').show();
+            anim($('#d1-arrow'), 'fadeOutUp', arrow1); 
+        }
         function show1(){
+            $('#d1').show();
+            arrow1();
+            $('#d1-l1').show();
+            anim($('#d1-l1'), 'fadeInLeft', show1_2); 
+        }
+        function show1_2()
+        {
             $('#d1-l2').show();
-            anim($('#d1-l2'), 'zoomIn', show2);  
+            anim($('#d1-l2'), 'flipInY', show1_3); 
         }
-        function show2(){
+        function show1_3()
+        {
             $('#d1-l3').show();
+            anim($('#d1-l3'), 'flipInY', show1_4); 
+        }
+        function show1_4()
+        {
             $('#d1-l4').show();
+            anim($('#d1-l4'), 'slideInLeft'); 
             $('#d1-l5').show();
-            anim($('#d1-l3'), 'fadeInLeft'); 
-            anim($('#d1-l4'), 'fadeInLeft'); 
-            anim($('#d1-l5'), 'fadeInLeft', show3); 
+            anim($('#d1-l5'), 'slideInLeft', show1_5); 
         }
-        function show3()
-        {
-            $('#d1-l7').show();
-            anim($('#d1-l7'), 'flipInY', show4); 
-        }
-        function show4()
-        {
-            $('#d1-l11').show();
-            anim($('#d1-l11'), 'flipInY', show5); 
-        }
-        function show5()
-        {
-            $('#d1-l12').show();
-            anim($('#d1-l12'), 'slideInLeft'); 
-            $('#d1-l13').show();
-            anim($('#d1-l13'), 'slideInLeft', show6); 
-        }
-        function show6()
-        {
-            $('#d1-l8').show();
-            anim($('#d1-l8'), 'slideInLeft'); 
-            $('#d1-l10').show();
-            anim($('#d1-l10'), 'slideInRight',show7); 
-        }
-        function show7()
+        function show1_5()
         {
             $('#d1-l6').show();
-            anim($('#d1-l6'), 'slideInLeft', show8); 
+            anim($('#d1-l6'), 'slideInLeft'); 
+            $('#d1-l7').show();
+            anim($('#d1-l7'), 'slideInRight',show1_6); 
         }
-        function show8()
+        function show1_6()
+        {
+            $('#d1-l8').show();
+            anim($('#d1-l8'), 'slideInLeft', show1_7); 
+        }
+        function show1_7()
         {
             $('#d1-l9').show();
-            anim($('#d1-l9'), 'zoomIn', show9); 
+            anim($('#d1-l9'), 'zoomIn', show1_8); 
         }
-        function show9()
+        function show1_8()
         {
-            $('#d1-l14').show();
-            anim($('#d1-l14'), 'zoomIn'); 
+            $('#d1-l10').show();
+            anim($('#d1-l10'), 'zoomIn'); 
+            $('#d1-l11').show();
+            anim($('#d1-l11'), 'zoomIn'); 
+        }
+        //第二页动画
+        function hide2(){
+            $('#d2').hide();
+            $('#d2-l1').hide();
+        }
+        function arrow2(){
+            if (pageIndex != 2)
+            {
+                return;
+            }
+            $('#d2-arrow').show();
+            anim($('#d2-arrow'), 'fadeOutUp', arrow2); 
+        }
+        function show2(){
+            $('#d2').show();
+            arrow2();
+            $('#d2-l1').show();
+            anim($('#d2-l1'), 'fadeInLeft'); 
         }
         $(document).ready(function(){
-            //show1();            
+            show0_1(show1);        
         });
-        
     </script>
 </html>
