@@ -989,9 +989,13 @@
         //     pageIndex = 1;
         //     show0_1(show1);
         // });
-        $(window).load(function(){
-             pageIndex = 1;
-             show0_1(show1);
-        });
+        // $(window).load(function(){
+        //      pageIndex = 1;
+        //      show0_1(show1);
+        // });
+        window.onload = function() { 
+            pageIndex = 1;
+            show0_1(show1);
+        };
     </script>
 </html>
