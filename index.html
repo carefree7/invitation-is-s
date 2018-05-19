@@ -3,29 +3,33 @@
     <head>
         <title>蓝色古龙与皈依的婚礼</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=600, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <!-- <script src="js/index.min.js"></script> -->
         <link rel="stylesheet" href="css/animate.min.css">
         <style>
            *{
                 font-family: 微软雅黑;
             }
-            HTML {margin:0;padding:0;height:100%;overflow:auto;scrollbar-3dlight-color:#718da6;scrollbar-arrow-color:#000;scrollbar-base-color:#718da6;scrollbar-darkshadow-color:#fff;scrollbar-face-color:#f2f7fc;scrollbar-highlight-color:#fbfdfc;scrollbar-shadow-color:#718da6;}
+            HTML {margin:0;padding:0;height:100%;overflow:auto;
+                 scrollbar-3dlight-color:#718da6;scrollbar-arrow-color:#000;scrollbar-base-color:#718da6;
+                 scrollbar-darkshadow-color:#fff;scrollbar-face-color:#f2f7fc;scrollbar-highlight-color:#fbfdfc;
+                 scrollbar-shadow-color:#718da6;}
             BODY {
-                margin:0;padding:0;margin:auto;overflow:auto;font-size:12px;color:#000;
-                background:#fff;font-family:Verdana, Arial;font-size:11px;
+                margin:0;padding:0;margin:auto;overflow:auto;color:#000;
+                background:#fff;font-family:Verdana, Arial;
                 display:flex;/*Flex布局*/ display: -webkit-flex; /* Safari */ align-items:center;/* 垂直居中 */
                 /* 水平居中 子项需要设置 margin: auto*/
                 text-align: center;
                 width: 100%;height: 100%;
                 position: relative;
             }
-            SELECT {font-family:微软雅黑;font-size:15px;}
+            SELECT {font-family:微软雅黑;font-size:.4rem;}
             IMG { border:none; }
             .rotate{
-                -webkit-transition-property: -webkit-transform;
+                /* -webkit-transition-property: -webkit-transform;
                 -webkit-transition-duration: 1s;
                 -moz-transition-property: -moz-transform;
-                -moz-transition-duration: 1s;
+                -moz-transition-duration: 1s; */
                 -webkit-animation: rotate 3s linear infinite;
                 -moz-animation: rotate 3s linear infinite;
                 -o-animation: rotate 3s linear infinite;
@@ -71,8 +75,8 @@
                 display: none;
             }
             .page{
-                    width: 375px;
-                    height: 667px;
+                    width: 100%;
+                    height: 100%;
                     position: relative;
                     margin: auto;
                     padding: 0;
@@ -83,13 +87,23 @@
                     background-size: cover; 
                     overflow:hidden;
             }
-            @media screen and (max-width:375px) {
-                BODY{
+            @media screen and (max-width:320px) {
+                BODY,.page{
+                    width: 320px;
+                }
+            }  
+            @media screen and (max-height:568px) {
+                BODY,.page{
+                    height: 568px;
+                }
+            }
+            @media screen and (min-width:375px) {
+                .page{
                     width: 375px;
                 }
             }  
-            @media screen and (max-height:667px) {
-                BODY{
+            @media screen and (min-height:667px) {
+                .page{
                     height: 667px;
                 }
             }                
@@ -130,57 +144,61 @@
         <div id="d1" class="page" style="display: none;"> 
             <ul>
                 <li id="d1-l1" >
-                    <div style="width:1rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
-                    <div style="width:1rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
-                    <div style="height:1rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
-                    <div style="height:1rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="width:1.0rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="width:1.0rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="height:1.0rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="height:1.0rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
                 </li>
-                <li id="d1-l2" style="background-size:16rem;background-image:url(images/kuang.jpg);">
+                <li id="d1-l2" style="background-size:90%;background-image:url(images/kuang.jpg);">
                 </li>
-                <li id="d1-l3" style="background-size:11rem;left:-1.2rem;background-image:url(images/bigXi.jpg);">
+                <li id="d1-l3" style="background-size:60%;left:-7%;background-image:url(images/bigXi.jpg);">
                 </li>
-                <li id="d1-l4" style="background-size:4rem;bottom: -17rem;right: -6.4rem;background-image:url(images/cloud.jpg);">
+                <li id="d1-l4" style="background-size:4rem;bottom: 2rem;right: 1.5rem;background-image:url(images/cloud.jpg);background-position:100% 100%;">
                 </li>
-                <li id="d1-l5" style="background-size:4rem;top: -5.8rem;left: -6.4rem;background-image:url(images/cloud.jpg);">
+                <li id="d1-l5" style="background-size:4rem;top: 10.4rem;left: 1.5rem;background-image:url(images/cloud.jpg);background-position:0 0;">
                 </li> 
-                <li id="d1-l6" style="background-size:7.2rem;bottom: -10rem;left: -6rem;background-image:url(images/boy3.jpg);">
+                <li id="d1-l6" style="background-size:32%;bottom: 1rem;left: 1rem;background-image:url(images/boy3.jpg);background-position:0 100%;">
                 </li>
-                <li id="d1-l7" style="background-size:7.2rem;top: -10rem;right: -6rem;background-image:url(images/bigGirl.jpg);">
+                <li id="d1-l7" style="background-size:30%;top: 2.6rem;right: 1rem;background-image:url(images/bigGirl.jpg);background-position:100% 0">
                 </li>
-                <li id="d1-l8" style="background-size:7.2rem;top: -14.6rem;left: -6rem;background-image:url(images/san.jpg);">
+                <li id="d1-l8" style="background-size:32%;top:1.0rem;left:1.0rem;background-image:url(images/san.jpg);background-position:0 0;">
                 </li>
-                <li id="d1-l9" style="background-size:7.2rem;bottom: -11rem;left: -0rem;background-image:url(images/xi.jpg);">
+                <li id="d1-l9" style="background-size:7.2rem;bottom: 5rem;background-image:url(images/xi.jpg);background-position:center 100%;">
                 </li>
-                <li id="d1-l10" style="bottom: -14rem;left: -0rem;font-size: 14px;">
-                    <div style="width: 100%;height: 100%;
-                    display:flex;display: -webkit-flex;align-items:center;text-align: center;
-                    color: rgb(255, 255, 255);text-align:center;line-height:2;word-wrap: break-word;">
-                        <div style="margin: auto">杨 一 中 & 张 鹤</div>
+                <li id="d1-l10" style="bottom:3rem;left:0rem;">
+                    <!-- display:flex;display: -webkit-flex;align-items:baseline; 垂直居中-->
+                    <!-- 包一层的目的是方便子层的元素方便绝对定位-->
+                    <div style="width: 100%;height: 100%;position: relative;">
+                            <div style="width:100%;text-align:center;position: absolute;bottom:0;
+                            word-wrap:break-word;color: rgb(255, 255, 255);font-size: 0.8rem">
+                            杨 一 中 & 张 鹤
+                        </div>
                     </div>
                 </li> 
-                <li id="d1-l11" style="bottom: -16.5rem;left: -0rem;">
-                    <div style="width: 100%;height: 100%;
-                    display:flex;display: -webkit-flex;align-items:center;text-align: center;
-                    color: rgb(255, 255, 255);text-align:center;line-height:2;word-wrap: break-word;">
-                        <div style="margin: auto">2018.05.26</div>
+                <li id="d1-l11" style="bottom:2rem;left:0rem;">
+                    <div style="width: 100%;height: 100%;position: relative;">
+                            <div style="width:100%;text-align:center;position: absolute;bottom:0;
+                            word-wrap:break-word;color: rgb(255, 255, 255);font-size: 0.6rem">
+                            2018.05.26
+                        </div>
                     </div>
-                </li>            
+                </li>          
             </ul>
-            <arrow id="d1-arrow" style="position: absolute;z-index:10;left:11.2rem;bottom: 2rem;">
-                <img id="arrowOn" src="images/arrow.png" style="display: block;width:20px;height:17px;"/>
+            <arrow id="d1-arrow" style="position: absolute;z-index:10;bottom: 2rem;">
+                <img id="arrowOn" src="images/arrow.png" style="display: block;width:.533333rem;height:.453333rem;"/>
             </arrow> 
         </div>
         <div id="d2" class="page" style="display: none;"> 
             <ul>
                 <li id="d2-l1" >
-                    <div style="width:1rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
-                    <div style="width:1rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
-                    <div style="height:1rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
-                    <div style="height:1rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="width:1.0rem;height:100%;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="width:1.0rem;height:100%;right:0;position:absolute;background-image:url(images/kuang2.jpg);"></div>
+                    <div style="height:1.0rem;width:100%;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
+                    <div style="height:1.0rem;width:100%;bottom:0;position:absolute;background-image:url(images/kuangTop.jpg);"></div>
                 </li>
             </ul>
-            <arrow id="d2-arrow" style="position: absolute;z-index:10;left:11.2rem;bottom: 2rem;">
-                <img id="arrowOn" src="images/arrow.png" style="display: block;width:20px;height:17px;"/>
+            <arrow id="d2-arrow" style="position: absolute;z-index:10;bottom: 2rem;">
+                <img id="arrowOn" src="images/arrow.png" style="display: block;width:.533333rem;height:.453333rem;"/>
             </arrow> 
         </div>
     </body>
@@ -193,7 +211,7 @@
         // });
         //控制背景音乐
         var oAudio = document.getElementById('myaudio');
-        oAudio.volume = 0.1;
+        oAudio.volume = 0.0;
         $("#music").bind('touchstart click', function() {
             if ($("#musicOn").is(":hidden"))
             {
@@ -210,7 +228,7 @@
         });
         //翻页
         var pageIndex = 1;
-        $("arrow").bind('touchstart click', function() {
+        $("body").bind('touchstart click', function() {
             if (pageIndex == 2)
             {
                 hide2();
@@ -265,24 +283,24 @@
             $('#d1').show();
             arrow1();
             $('#d1-l1').show();
-            anim($('#d1-l1'), 'fadeInLeft', show1_2); 
+            anim($('#d1-l1'), 'fadeInLeft',show1_2); 
         }
         function show1_2()
         {
             $('#d1-l2').show();
-            anim($('#d1-l2'), 'flipInY', show1_3); 
+            anim($('#d1-l2'), 'flipInY',show1_3); 
         }
         function show1_3()
         {
             $('#d1-l3').show();
-            anim($('#d1-l3'), 'flipInY', show1_4); 
+            anim($('#d1-l3'), 'flipInY',show1_4);  
         }
         function show1_4()
         {
             $('#d1-l4').show();
             anim($('#d1-l4'), 'slideInLeft'); 
             $('#d1-l5').show();
-            anim($('#d1-l5'), 'slideInLeft', show1_5); 
+            anim($('#d1-l5'), 'slideInLeft',show1_5);  ; 
         }
         function show1_5()
         {
