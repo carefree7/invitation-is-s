@@ -484,7 +484,7 @@
         // });
         //控制背景音乐
         var oAudio = document.getElementById('myaudio');
-        oAudio.volume = 0.1;
+        oAudio.volume = 0.8;
         $("#music").bind('touchstart click', function() {
             if ($("#musicOn").is(":hidden"))
             {
@@ -523,15 +523,15 @@
             else if (pageIndex == 4)
             {
                 hide4();
-                show0_1(show5); 
-                pageIndex = 5;
-            }
-            else if (pageIndex == 5)
-            {
-                hide5();
                 show0_1(show6); 
                 pageIndex = 6;
             }
+            // else if (pageIndex == 5)
+            // {
+            //     hide5();
+            //     show0_1(show6); 
+            //     pageIndex = 6;
+            // }
             else if (pageIndex == 6)
             {
                 hide6();
@@ -553,10 +553,16 @@
             else if (pageIndex == 9)
             {
                 hide9();
-                show0_1(show10); 
+                show0_1(show5); 
                 pageIndex = 10;
             }
             else if (pageIndex == 10)
+            {
+                hide5();
+                show0_1(show10); 
+                pageIndex = 11;
+            }
+            else if (pageIndex == 11)
             {
                 hide10();
                 show0_1(show1); 
