@@ -933,7 +933,7 @@
         }
         function show8_2(){
             $('#d8-l2').show();
-            anim($('#d8-l2'), 'slideInDown', autoNextPage(6000)); 
+            anim($('#d8-l2'), 'slideInDown', setTimeout(function(){ nextPage(); }, 4000)); 
         }
         function show8_3(){
             $('#d8-l3').show();
@@ -945,7 +945,7 @@
         }
         function show8_5(){
             $('#d8-l5').show();
-            anim($('#d8-l5'), 'fadeInUp', setTimeout(function(){ nextPage(); }, 6000));   
+            anim($('#d8-l5'), 'fadeInUp', autoNextPage(6000));  
         }
         //第九页动画
         function hide9(){
