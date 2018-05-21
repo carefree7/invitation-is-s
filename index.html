@@ -492,6 +492,8 @@
         //     $(".body0").css("zoom", $(window).width() / 600);
         // });
         // run on page load
+
+        var isHand = false;
         var audio = document.getElementById('myaudio');
         $.ajax({
             url: 'js/jquery-1.10.2.min.js',
@@ -590,6 +592,7 @@
             }
         }
         $("arrow").bind('touchstart click', function() {
+            isHand = true;            
             nextPage();
         });
         //动画公共类
@@ -605,6 +608,12 @@
         function show0_1(nextShow){
             $('#d0-1').show();
             anim($('#d0-1'), 'zoomIn', nextShow);  
+        }
+        function autoNextPage(delayTime){
+            if(!isHand)
+            {
+                setTimeout(function(){ nextPage(); }, delayTime);
+            } 
         }
         //第一页动画
         function hide1(){
@@ -674,7 +683,7 @@
             $('#d1-l10').show();
             anim($('#d1-l10'), 'zoomIn'); 
             $('#d1-l11').show();
-            anim($('#d1-l11'), 'zoomIn', setTimeout(function(){ nextPage(); },3000)); 
+            anim($('#d1-l11'), 'zoomIn', autoNextPage(3000)); 
         }
         //第二页动画
         function hide2(){
@@ -716,7 +725,7 @@
         }
         function show2_5(){
             $('#d2-l6').show();
-            anim($('#d2-l6'), 'bounce', setTimeout(function(){ nextPage(); },10000)); 
+            anim($('#d2-l6'), 'bounce', autoNextPage(10000)); 
         }
         //第三页动画
         function hide3(){
@@ -760,7 +769,7 @@
         }
         function show3_6(){
             $('#d3-l6').show();
-            anim($('#d3-l6'), 'fadeInRight', setTimeout(function(){ nextPage(); },6000));  
+            anim($('#d3-l6'), 'fadeInRight', autoNextPage(6000)); 
         }
         //第四页动画
         function hide4(){
@@ -804,7 +813,7 @@
         }
         function show4_6(){
             $('#d4-l6').show();
-            anim($('#d4-l6'), 'fadeInLeft', setTimeout(function(){ nextPage(); },6000));  
+            anim($('#d4-l6'), 'fadeInLeft', autoNextPage(6000)); 
         }
         //第五页动画
         function hide5(){
@@ -833,7 +842,7 @@
         }
         function show5_3(){
             $('#d5-l3').show();
-            anim($('#d5-l3'), 'bounce', setTimeout(function(){ nextPage(); },6000));  
+            anim($('#d5-l3'), 'bounce', autoNextPage(6000)); 
         }
         //第六页动画
         function hide6(){
@@ -867,7 +876,7 @@
         }
         function show6_4(){
             $('#d6-l3').show();
-            anim($('#d6-l3'), 'swing', setTimeout(function(){ nextPage(); },6000));  
+            anim($('#d6-l3'), 'swing', autoNextPage(6000)); 
         }
         //第七页动画
         function hide7(){
@@ -897,7 +906,7 @@
         }
         function show7_3(){
             $('#d7-l4').show();
-            anim($('#d7-l4'), 'fadeInUp', setTimeout(function(){ nextPage(); },6000));   
+            anim($('#d7-l4'), 'fadeInUp', autoNextPage(6000)); 
         }
         //第八页动画
         function hide8(){
@@ -924,7 +933,7 @@
         }
         function show8_2(){
             $('#d8-l2').show();
-            anim($('#d8-l2'), 'slideInDown', setTimeout(function(){show8_3();}, 4000));   
+            anim($('#d8-l2'), 'slideInDown', autoNextPage(6000)); 
         }
         function show8_3(){
             $('#d8-l3').show();
@@ -970,7 +979,7 @@
         }
         function show9_4(){
             $('#d9-l3').show();
-            anim($('#d9-l3'), 'swing', setTimeout(function(){ nextPage(); },6000));  
+            anim($('#d9-l3'), 'swing', autoNextPage(6000)); 
         }
         //第十页动画
         function hide10(){
