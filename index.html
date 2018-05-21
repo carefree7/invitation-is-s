@@ -136,6 +136,7 @@
         <div id="music" style="position: fixed;z-index: 10;right: 1rem;top: 1rem;">
             <img id="musicOn" src="images/onMusic.png" style="display: block;" class="rotate"/>
             <img id="musicOff" src="images/offMusic.png" style="display: none;"/>
+            <!-- <audio id="myaudio" loop="loop" preload="auto" autoplay="autoplay"> -->
             <audio id="myaudio" loop="loop" preload="auto" autoplay="autoplay">
                 <source src="music/最重要的决定.mp3" type="audio/ogg" />
                 <source src="music/最重要的决定.mp3" type="audio/mp3" />
@@ -482,9 +483,7 @@
         //     $(".body0").css("display", "block");
         //     $(".body0").css("zoom", $(window).width() / 600);
         // });
-        //控制背景音乐
-        var oAudio = document.getElementById('myaudio');
-        oAudio.volume = 0.8;
+       
         $("#music").bind('touchstart click', function() {
             if ($("#musicOn").is(":hidden"))
             {
@@ -1002,6 +1001,14 @@
         window.onload = function() { 
             pageIndex = 1;
             show0_1(show1);
+
+             $(window).load(function(){
+                 //控制背景音乐
+                var oAudio = document.getElementById('myaudio');
+                oAudio.volume = 0.8;
+                oAudio.src = "music/最重要的决定.mp3"; 
+                oAudio.play();
+             });
         };
     </script>
 </html>
