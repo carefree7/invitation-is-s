@@ -1007,21 +1007,23 @@
         //      show0_1(show1);
         // });
 
-        function autoPlayAudio() {
-            wx.config({
-                // 配置信息, 即使不正确也能使用 wx.ready
-                debug: false,
-                appId: '',
-                timestamp: 1,
-                nonceStr: '',
-                signature: '',
-                jsApiList: []
-            });
-            wx.ready(function() {
-                var globalAudio=document.getElementById("myaudio");
-                globalAudio.play();
-            });
-        };
+        // function autoPlayAudio() {
+        //     wx.config({
+        //         // 配置信息, 即使不正确也能使用 wx.ready
+        //         debug: false,
+        //         appId: '',
+        //         timestamp: 1,
+        //         nonceStr: '',
+        //         signature: '',
+        //         jsApiList: []
+        //     });
+        //     wx.ready(function() {
+        //         var globalAudio=document.getElementById("myaudio");
+        //         globalAudio.play();
+        //         document.getElementById('musicAudio').setAttribute('src', 'your.mp3')
+        //         document.getElementById('musicAudio').play()
+        //     });
+        // };
 
         window.onload = function() { 
             pageIndex = 11;
@@ -1033,7 +1035,14 @@
                 //oAudio.src = "music/最重要的决定.mp3"; 
                 //oAudio.play();
                 // 解决ios音乐不自动播放的问题
-                autoPlayAudio();
+                document.getElementById('myaudio').play();
+                document.getElementById('myaudio').volume = 1;
+                document.getElementById('myaudio').pause();
+
+                $.get("music/最重要的决定.mp3", function(data){
+                    document.getElementById('musicAudio').setAttribute('src', 'music/最重要的决定.mp3');
+                    document.getElementById('musicAudio').play();
+                })
              });
         };
     </script>
