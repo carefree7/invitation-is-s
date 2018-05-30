@@ -507,7 +507,7 @@
             audio.play();
         }, false);
        
-        $("#music").bind('touchstart click', function() {
+        $("#music").bind('click', function() {
             if ($("#musicOn").is(":hidden"))
             {
                 $("#musicOn").show();
@@ -610,9 +610,15 @@
             anim($('#d0-1'), 'zoomIn', nextShow);  
         }
         function autoNextPage(delayTime){
+            //规避多页同时显示的问题：手动点击一次之后不再自动往下走
             if(!isHand)
             {
-                setTimeout(function(){ nextPage(); }, delayTime);
+                setTimeout(function(){ 
+                    if (!isHand)
+                    {
+                        nextPage(); 
+                    }
+                }, delayTime);
             } 
         }
         //第一页动画
