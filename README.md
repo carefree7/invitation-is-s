@@ -1,6 +1,6 @@
 # 欢迎使用 电子请帖·中式模板
 
-你可以使用 [查看Demo](https://carefree7.github.io/invitation-is-s/) to maintain and 来进行预览.
+你可以 [查看Demo](https://carefree7.github.io/invitation-is-s/).
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
