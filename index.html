@@ -508,7 +508,7 @@
             //等jquery完全加载后才执行
             $(function(){
                 initDoc();
-                nextPage($("#d7"));
+                nextPage($("#d10"));
             }); 
         };
         //动画公共类
@@ -629,7 +629,7 @@
         }
         function show3_4(){
             $('#d3-4').show();
-            anim($('#d3-4'), 'rotateInDownLeft', show3_5); 
+            anim($('#d3-4'), 'flipInX', show3_5); 
         }
         function show3_5(){
             $('#d3-5').show();
@@ -650,7 +650,7 @@
         }
         function show4_4(){
             $('#d4-4').show();
-            anim($('#d4-4'), 'rotateInDownRight', show4_5); 
+            anim($('#d4-4'), 'flipInX', show4_5); 
         }
         function show4_5(){
             $('#d4-5').show();
