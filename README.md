@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# 欢迎使用 电子请帖·中式模板
 
-You can use the [editor on GitHub](https://github.com/carefree7/invitation-is-s/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+你可以使用 [查看Demo](https://carefree7.github.io/invitation-is-s/) to maintain and 来进行预览.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## 注意事项
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+整个项目基本没啥注意事项
+- 新婚愉快
+- 百年好合
+- ![Image](https://carefree7.github.io/invitation-is-s/images/boy2.jpg)
 
+1. 早生贵子
+2. 白头偕老
+
+### 唯一要注意的是
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+每个场景的div的id是由d+编号组成
+每个场景的第一个动画函数是由show+编号组成
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/carefree7/invitation-is-s/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**704567115@qq.com.**  欢迎联系 _and_ `good job`
