@@ -1,15 +1,13 @@
 # 欢迎使用 电子请帖·中式模板
 
+![Image](https://carefree7.github.io/invitation-is-s/images/boy2.jpg)
 你可以 [查看Demo](https://carefree7.github.io/invitation-is-s/).
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ## 注意事项
 
 整个项目基本没啥注意事项
 - 新婚愉快
 - 百年好合
-- ![Image](https://carefree7.github.io/invitation-is-s/images/boy2.jpg)
 
 1. 早生贵子
 2. 白头偕老
